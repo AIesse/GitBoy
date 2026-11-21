@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+const { title = '首页', description = 'GitBoy 的个人博客，记录技术、工具、生活与思考。' } = Astro.props;
+const siteTitle = '开源通宝';
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <meta name="description" content={description} />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:title" content={`${title} — ${siteTitle}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <title>{title} — {siteTitle}</title>
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="alternate" type="application/rss+xml" title="开源通宝 RSS" href={`${import.meta.env.BASE_URL}rss.xml`} />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href={import.meta.env.BASE_URL}>开源通宝<span class="wordmark-dot">.</span></a>
+        <nav aria-label="主导航">
+          <a class:list={{ active: path === import.meta.env.BASE_URL || path === `${import.meta.env.BASE_URL}` }} href={import.meta.env.BASE_URL}>文章</a>
+          <a class:list={{ active: path.includes('/about') }} href={`${import.meta.env.BASE_URL}about/`}>关于</a>
+          <a href={`${import.meta.env.BASE_URL}rss.xml`}>RSS ↗</a>
+        </nav>
+      </header>
+      <main><slot /></main>
+      <footer class="footer">
+        <span>© {new Date().getFullYear()} 开源通宝</span>
+        <span>记录技术，也记录生活。</span>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </footer>
+    </div>
+  </body>
+</html>

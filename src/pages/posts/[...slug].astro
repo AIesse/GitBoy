@@ -1,0 +1,24 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const dateFmt = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Base title={post.data.title} description={post.data.description}>
+  <article class="article-page">
+    <a class="back-link" href={import.meta.env.BASE_URL}>← 返回文章列表</a>
+    <header class="article-header">
+      <p class="eyebrow">FIELD NOTES · {dateFmt.format(post.data.pubDate)}</p>
+      <h1>{post.data.title}</h1>
+      <p class="article-description">{post.data.description}</p>
+      <div class="post-tags article-tags">{post.data.tags.map((tag) => <span>{tag}</span>)}</div>
+    </header>
+    <div class="prose"><Content /></div>
+    <div class="article-bottom"><span>感谢阅读。</span><a href={import.meta.env.BASE_URL}>阅读更多文章 ↗</a></div>
+  </article>
+</Base>
