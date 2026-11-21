@@ -32,6 +32,14 @@ export async function GET(context) {
       content: 'http://purl.org/rss/1.0/modules/content/',
     },
     customData:
+      // <image> 必须在 <item> 之前，阅读器头像取这里；144×144 是 RSS 规范上限
+      `<image>` +
+      `<url>${new URL(`${BASE}images/feed-logo.png`, context.site).href}</url>` +
+      `<title>开源通宝 · GitBoy</title>` +
+      `<link>${site.href}</link>` +
+      `<width>144</width>` +
+      `<height>144</height>` +
+      `</image>` +
       `<language>zh-CN</language>` +
       `<lastBuildDate>${lastBuild.toUTCString()}</lastBuildDate>` +
       `<generator>Astro</generator>` +
