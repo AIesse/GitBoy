@@ -87,6 +87,8 @@ const TAG_EN = {
   前端: 'Frontend',
   后端: 'Backend',
   自部署: 'Self-hosted',
+  自托管: 'Self-hosted',
+  媒体管理: 'Media library',
   影音: 'Media',
   NAS: 'NAS',
 };
