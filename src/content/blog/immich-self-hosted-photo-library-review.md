@@ -127,7 +127,7 @@ Immich 属于那种「把商业产品的体验按开源方式重做一遍」的�
 
 ---
 
-## 资料来源
+*资料来源：*
 
 - [immich-app/immich 官方仓库](https://github.com/immich-app/immich)
 - [官方安装文档：Docker Compose](https://docs.immich.app/install/docker-compose)
