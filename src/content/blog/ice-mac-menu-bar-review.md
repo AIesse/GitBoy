@@ -100,6 +100,7 @@ Ice 解决的是一个很具体、却容易被忽略的问题：Mac 菜单栏随
 ---
 
 *资料来源：*
+
 - [Ice 官方 GitHub 仓库](https://github.com/jordanbaird/Ice)
 - [Ice 官方网站](https://icemenubar.app)
 - [Ice 官方 Releases](https://github.com/jordanbaird/Ice/releases)
