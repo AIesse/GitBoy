@@ -9,19 +9,19 @@ const allTags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
 <Base title="首页" description="个人文章、技术笔记与日常思考。">
   <section class="intro">
     <p class="eyebrow">PERSONAL BLOG · GITBOY</p>
-    <h1>记录值得记录的。<br /><span>分享有用的东西。</span></h1>
-    <p class="intro-copy">你好，我是 GitBoy。这里分享开源工具、技术实践与日常思考。</p>
-    <div class="intro-meta"><span class="status-dot"></span> 持续更新中 <span class="meta-divider">/</span> 写作 · 分享 · 开源</div>
+    <h1 data-i18n-html="index.h1">记录值得记录的。<br /><span>分享有用的东西。</span></h1>
+    <p class="intro-copy" data-i18n="index.intro">你好，我是 GitBoy。这里分享开源工具、技术实践与日常思考。</p>
+    <div class="intro-meta"><span class="status-dot"></span> <span data-i18n="index.status">持续更新中</span> <span class="meta-divider">/</span> <span data-i18n="index.metaFlow">写作 · 分享 · 开源</span></div>
   </section>
 
   <section class="posts-section" aria-labelledby="posts-heading">
     <div class="section-heading">
-      <div><p class="eyebrow">文章归档</p><h2 id="posts-heading">最近文章 <span class="count">{String(posts.length).padStart(2, '0')}</span></h2></div>
-      <label class="search-wrap"><span class="sr-only">搜索文章</span><span class="search-icon">⌕</span><input id="post-search" type="search" placeholder="搜索文章…" autocomplete="off" /></label>
+      <div><p class="eyebrow" data-i18n="index.archive">文章归档</p><h2 id="posts-heading"><span data-i18n="index.latest">最近文章</span> <span class="count">{String(posts.length).padStart(2, '0')}</span></h2></div>
+      <label class="search-wrap"><span class="sr-only">搜索文章</span><span class="search-icon">⌕</span><input id="post-search" type="search" placeholder="搜索文章…" autocomplete="off" data-i18n-attr="placeholder:index.search" /></label>
     </div>
-    <div class="tag-filter" aria-label="按标签筛选">
-      <button class="tag-chip selected" data-tag="all">全部</button>
-      {allTags.map((tag) => <button class="tag-chip" data-tag={tag}>{tag}</button>)}
+    <div class="tag-filter" aria-label="按标签筛选" data-i18n-attr="aria-label:index.filter">
+      <button class="tag-chip selected" data-tag="all" data-i18n="index.all">全部</button>
+      {allTags.map((tag) => <button class="tag-chip" data-tag={tag} data-tag-label={tag}>{tag}</button>)}
     </div>
     <div class="post-list" id="post-list">
       {posts.map((post, index) => (
@@ -30,15 +30,15 @@ const allTags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
           <div class="post-main">
             <a class="post-title" href={`${import.meta.env.BASE_URL}posts/${post.id.replace(/\.md$/, '')}/`}>{post.data.title}</a>
             <p class="post-description">{post.data.description}</p>
-            <div class="post-tags">{post.data.tags.map((tag) => <span>{tag}</span>)}</div>
+            <div class="post-tags">{post.data.tags.map((tag) => <span data-tag-label={tag}>{tag}</span>)}</div>
           </div>
-          <time class="post-date" datetime={post.data.pubDate.toISOString()}>{dateFmt.format(post.data.pubDate)}</time>
+          <time class="post-date" datetime={post.data.pubDate.toISOString()} data-date={post.data.pubDate.toISOString()}>{dateFmt.format(post.data.pubDate)}</time>
           <span class="post-arrow">↗</span>
         </article>
       ))}
-      <p class="empty-state" id="empty-state" hidden>没有找到相关文章。</p>
+      <p class="empty-state" id="empty-state" hidden data-i18n="index.empty">没有找到相关文章。</p>
     </div>
-    <p class="list-end">— 已经到底了 —</p>
+    <p class="list-end" data-i18n="index.end">— 已经到底了 —</p>
   </section>
 </Base>
 <script>

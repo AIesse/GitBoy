@@ -11,14 +11,20 @@ const dateFmt = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long
 ---
 <Base title={post.data.title} description={post.data.description}>
   <article class="article-page">
-    <a class="back-link" href={import.meta.env.BASE_URL}>← 返回文章列表</a>
+    <a class="back-link" href={import.meta.env.BASE_URL} data-i18n="post.back">← 返回文章列表</a>
     <header class="article-header">
-      <p class="eyebrow">FIELD NOTES · {dateFmt.format(post.data.pubDate)}</p>
+      <p class="eyebrow">FIELD NOTES · <span data-date={post.data.pubDate.toISOString()}>{dateFmt.format(post.data.pubDate)}</span></p>
       <h1>{post.data.title}</h1>
       <p class="article-description">{post.data.description}</p>
-      <div class="post-tags article-tags">{post.data.tags.map((tag) => <span>{tag}</span>)}</div>
+      <div class="post-tags article-tags">{post.data.tags.map((tag) => <span data-tag-label={tag}>{tag}</span>)}</div>
     </header>
     <div class="prose"><Content /></div>
-    <div class="article-bottom"><span>感谢阅读。</span><a href={import.meta.env.BASE_URL}>阅读更多文章 ↗</a></div>
+    <div class="article-bottom">
+      <span data-i18n="post.thanks">感谢阅读。</span>
+      <span class="footer-links">
+        <a href="https://t.me/gitboy" target="_blank" rel="noreferrer" data-i18n="footer.telegram">电报群 ↗</a>
+        <a href={import.meta.env.BASE_URL} data-i18n="post.more">阅读更多文章 ↗</a>
+      </span>
+    </div>
   </article>
 </Base>
