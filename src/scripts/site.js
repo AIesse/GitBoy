@@ -86,6 +86,9 @@ const TAG_EN = {
   安全: 'Security',
   前端: 'Frontend',
   后端: 'Backend',
+  自部署: 'Self-hosted',
+  影音: 'Media',
+  NAS: 'NAS',
 };
 
 const root = document.documentElement;
