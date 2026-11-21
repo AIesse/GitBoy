@@ -5,7 +5,7 @@ pubDate: 2026-11-21
 tags: [自托管, 媒体管理, 开源软件]
 ---
 
-![Peach 影片馆藏：搜索、筛选与海报墙](/images/peach-review/home-wide-20261118-2-1280.webp)
+![Peach 影片馆藏：搜索、筛选与海报墙](/GitBoy/images/peach-local-media-library-review/home-wide-20261118-2-1280.webp)
 
 影片文件散落在硬盘、NAS 和网盘里时，找一部片往往要先想起它存在哪个文件夹，再凭文件名猜内容。文件名常常只是一串编号，没有标题、演员、封面和分类，时间一长，库越大越难找。
 
@@ -25,25 +25,25 @@ Peach 扫描媒体目录后识别影片编号，读取同目录的 NFO 文件，
 
 媒体库可以同时覆盖本地硬盘、SMB 共享、已挂载的网盘和 PikPak。演示站首页左侧提供来源、时长、产地、发行年份、画幅、创作者和内容标签等多维筛选，顶部还有艺人头像墙与厂牌墙，配合排序（评分、观看次数、时长、体积、入库时间等），找片主要靠检索而不是翻文件夹。
 
-![Peach 人物与作品页](/images/peach-review/profile-wide-20261118-2-1280.webp)
+![Peach 人物与作品页](/GitBoy/images/peach-local-media-library-review/profile-wide-20261118-2-1280.webp)
 
 ### 3. 播放与记录
 
 支持网页播放与外部播放器，含字幕、倍速、旋转、续播和时间轴预览。实测演示站时，详情页本身没有播放按钮，播放入口在首页顶部的“进入播放墙”，是一个深色全屏播放界面，带播放列表、稍后看、进度条和详情入口；演示站的播放入口仅提供演示，不加载视频，实际播放效果需要在自己的部署上验证。
 
-![Peach 播放器](/images/peach-review/play-wide-20261118-2-1280.webp)
+![Peach 播放器](/GitBoy/images/peach-local-media-library-review/play-wide-20261118-2-1280.webp)
 
 ### 4. 关注与发现
 
 可以订阅人物与创作者的更新，发现新作品，管理“想要”清单。演示站的关注页会汇总订阅对象的最新作品，相当于给常看的创作者设了一个更新提醒。
 
-![Peach 创作者关注与作品更新](/images/peach-review/follow-wide-20261118-2-1280.webp)
+![Peach 创作者关注与作品更新](/GitBoy/images/peach-local-media-library-review/follow-wide-20261118-2-1280.webp)
 
 ### 5. 馆藏管理与任务中心
 
 提供标签管理、重复文件、多版本与分卷处理；统计页汇总馆藏、存储与观看数据。后台任务可以在任务中心暂停、继续或取消，并查看各任务的 CPU、GPU 与下载活动。需要转码时支持硬件加速（AMD / Intel 用 VAAPI，有 NVIDIA 设备时探测 NVENC），失败会回退软件转码。
 
-![Peach 馆藏、存储与观看统计](/images/peach-review/stats-wide-20261118-2-1280.webp)
+![Peach 馆藏、存储与观看统计](/GitBoy/images/peach-local-media-library-review/stats-wide-20261118-2-1280.webp)
 
 ## 二、适合哪些使用场景？
 
