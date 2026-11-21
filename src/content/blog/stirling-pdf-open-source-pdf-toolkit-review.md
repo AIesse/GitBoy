@@ -1,7 +1,7 @@
 ---
 title: "Stirling PDF：把五十多个 PDF 工具装进自己机器"
 description: "开源 PDF 处理平台 Stirling PDF，功能、场景、优缺点与安装方式评价。"
-pubDate: 2026-11-21T20:26:32+08:00
+pubDate: 2026-11-21T21:21:50+08:00
 tags: ["开源软件", "自托管", "效率工具", "工具"]
 ---
 
@@ -123,3 +123,11 @@ Stirling PDF 解决的是一个很具体的问题：**把 PDF 处理从「到处
 **一句话评价：** 一款把 PDF 处理全流程收进自家机器的开源平台，免费部分够用、边界也清楚，适合文档处理高频的人常驻。
 
 ---
+
+*资料来源：*
+
+- [Stirling PDF 官方 GitHub 仓库](https://github.com/Stirling-Tools/Stirling-PDF)
+- [Stirling PDF 官网](https://stirlingpdf.com)
+- [Stirling PDF 官方文档](https://docs.stirlingpdf.com)
+- [Stirling PDF 官方 Releases](https://github.com/Stirling-Tools/Stirling-PDF/releases)
+- [Stirling PDF 许可证文件（LICENSE）](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/LICENSE)
